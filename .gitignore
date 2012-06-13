@@ -13,3 +13,6 @@
 
 # Makefile
 makefile
+
+# Executable
+test
