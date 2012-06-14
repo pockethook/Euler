@@ -1,3 +1,5 @@
+// difference between sum of squares of first one hundred natural numbers and square of sum
+
 #include <iostream>
 
 using namespace std;

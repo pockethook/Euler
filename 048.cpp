@@ -1,3 +1,5 @@
+// last ten digits in 1^1 + .. +1000^1000
+
 #include <iostream>
 
 using namespace std;

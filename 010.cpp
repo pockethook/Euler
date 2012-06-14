@@ -1,3 +1,5 @@
+// sum of all primes below two million
+
 #include <iostream>
 
 using namespace std;

@@ -1,4 +1,7 @@
+// sum of digits of 100!
+
 #include <iostream>
+
 using namespace std;
 
 int factorial_sum(int n) {

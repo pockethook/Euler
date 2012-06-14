@@ -1,3 +1,5 @@
+// greatest product of five consecutive digits
+
 #include <iostream>
 
 using namespace std;

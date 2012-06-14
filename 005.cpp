@@ -1,3 +1,5 @@
+// smallest positive number evenly divisible by all the numbers from 1 to 20
+
 #include <iostream> 
 
 using namespace std;

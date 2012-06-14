@@ -1,6 +1,10 @@
+// sum even fibonnaci numbers below four million
+
 #include <iostream>
 
 using namespace std;
+
+const int MAX = 4000000;
 
 int main() {
   
@@ -9,7 +13,7 @@ int main() {
   int fib = 1;
   int sum = 0;
 
-  while (fib < 4000000) {
+  while (fib < MAX) {
     int temp = fib;
     fib += last;
     last = temp;

@@ -1,3 +1,5 @@
+// produce of pythagorean triple for which a+b+c=1000
+
 #include <iostream>
 
 using namespace std;
