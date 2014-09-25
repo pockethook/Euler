@@ -2,16 +2,18 @@
 
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 int main() {
-  long number = 600851475143;
+	unsigned long number = 600851475143;
 
-  for (int i = 2; i*i<number; i++) {
-    if (number%i==0)
-      number/=i--;
-  }
-    
-  cout << number << endl;
-  return 0;
+	for (unsigned long i = 2; i *i < number; ++i) {
+		while (number % i == 0) {
+			number /= i;
+		}
+	}
+
+	cout << number << endl;
+	return 0;
 }
