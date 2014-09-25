@@ -2,25 +2,40 @@
 
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
-const int MAX = 4000000;
+class Fibonacci {
+private:
+	unsigned a_;
+	unsigned b_;
+
+public:
+	Fibonacci(unsigned a, unsigned b) : a_(a), b_(b) {}
+	unsigned operator()() {
+		unsigned temp = a_ + b_;
+		a_ = b_;
+		b_ = temp;
+		return b_;
+	}
+};
 
 int main() {
   
-  int last = 1;
-  
-  int fib = 1;
-  int sum = 0;
+	Fibonacci next_fibonacci(0, 1);
 
-  while (fib < MAX) {
-    int temp = fib;
-    fib += last;
-    last = temp;
-    
-    if (fib < 4000000 && fib%2==0)
-      sum += fib;
-  }
+	unsigned sum = 0;
+	const unsigned limit = 4000000;
+
+	for (;;) {
+		unsigned latest = next_fibonacci();
+		if (latest > limit) {
+			break;
+		}
+		if (latest % 2 == 0) {
+			sum += latest;
+		}
+	}
 
   cout << sum << endl;
 
