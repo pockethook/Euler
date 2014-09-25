@@ -23,9 +23,9 @@ unsigned sum_multiples_below(const vector<unsigned> multiples,
 }
 
 int main() {
-	vector<unsigned> multiples {3, 5};
-	unsigned limit = 1000;
-	unsigned sum = sum_multiples_below(multiples, limit);
+	const vector<unsigned> multiples {3, 5};
+	const unsigned limit = 1000;
+	const unsigned sum = sum_multiples_below(multiples, limit);
 	cout << sum << endl;
 
 	return 0;
