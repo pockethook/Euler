@@ -1,19 +1,30 @@
-// difference between sum of squares of first one hundred natural numbers and square of sum
+// difference between sum of squares of first one hundred natural numbers
+// and square of sum
 
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
+
+unsigned sum_squares(const unsigned limit) {
+	unsigned sum = 0;
+	for (unsigned i = 0; i <= limit; ++i) {
+		sum += i * i;
+	}
+	return sum;
+}
+
+unsigned square_sum(const unsigned limit) {
+	unsigned sum = 0;
+	for (unsigned i = 0; i <= limit; ++i) {
+		sum += i;
+	}
+	return sum * sum;
+}
 
 int main() {
-  
-  int sum = 0;
-  int square = 0;
-  for (int i = 1; i < 101; i++) {
-    sum += i;
-    square += i*i;
-  }
-
-  cout << sum*sum - square << endl;
+	const unsigned limit {100};
+	cout << square_sum(limit) - sum_squares(limit) << endl;
 
   return 0;
 }

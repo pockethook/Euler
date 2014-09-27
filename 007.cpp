@@ -1,33 +1,35 @@
 // 10001st prime number
 
 #include <iostream>
+#include <vector>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::vector;
+
+bool is_prime(const unsigned trial, const vector<unsigned> &primes) {
+	for (const auto prime : primes) {
+		if (trial % prime == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+unsigned nth_prime(const unsigned n) {
+	vector<unsigned> primes {2};
+	for (unsigned trial = 3; primes.size() != n; trial += 2) {
+		if (is_prime(trial, primes)) {
+			primes.push_back(trial);
+		}
+	}
+	return primes.back();
+}
 
 int main() {
-  int prime[10001];
-  prime[0] = 2;
-  int primes = 1;
+	const unsigned n {10001};
+	cout << nth_prime(n) << endl;
 
-  // for each number
-  for (int i = 3; primes < 10002; i+=2) {
-    bool flag = true;
-    
-    // for each prime in the array
-    for (int j = 0; j < primes; j++)
-      
-      // if the number is divisible by a prime break
-      if (i%prime[j]==0) {
-	flag = false;
-	break;
-      }
-
-    // if prime add to the array
-    if (flag)
-      prime[primes++] = i;
-  }
-  
-  cout << prime[10000] << endl;
-  
-  return 0;
+	return 0;
 }
+
